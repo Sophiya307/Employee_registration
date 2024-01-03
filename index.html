@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Employee Registration Form</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Employee Registration Form</h2>
+
+      <form id="registrationForm" action="process.php" method="post" onsubmit="return validateForm()">
+
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" required />
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+        <div id="emailError" class="error-message"></div>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+        <div id="passwordError" class="error-message"></div>
+
+        <label>Gender</label>
+        <div>
+          <label for="male">
+            <input type="radio" id="male" name="gender" value="male" /> Male
+          </label>
+          <label for="female">
+            <input type="radio" id="female" name="gender" value="female" />
+            Female
+          </label>
+        </div>
+        <label>Hobbies:</label>
+        <div>
+          <label for="reading">
+            <input
+              type="checkbox"
+              id="reading"
+              name="hobbies[]"
+              value="Reading"
+            />
+            Reading
+          </label>
+          <label for="sports">
+            <input
+              type="checkbox"
+              id="sports"
+              name="hobbies[]"
+              value="Sports"
+            />
+            Sports
+          </label>
+          <label for="music">
+            <input type="checkbox" id="music" name="hobbies[]" value="Music" />
+            Music
+          </label>
+        </div>
+
+        <label for="department">Department</label>
+        <select id="department" name="department">
+          <option value="hr">HR</option>
+          <option value="it">IT</option>
+          <option value="marketing">Marketing</option>
+        </select>
+
+        <button type="submit" >Submit</button>
+      </form>
+      
+    </div>
+
+    
+  </body>
+</html>
